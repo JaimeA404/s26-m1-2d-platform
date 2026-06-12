@@ -4,7 +4,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb2d;
     public Animator animator;
-    public float moveSpeedX = 1f;
+    public float speedX = 1f;
 
     void Start()
     {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         if (Mathf.Abs(moveX) > 0.1f) 
         {
-            float force = moveX * moveSpeedX;
+            float force = moveX * speedX;
             rb2d.AddForceX(force, ForceMode2D.Force);
         }
         animator.SetFloat("moveSpeedX", Mathf.Abs(moveX));
